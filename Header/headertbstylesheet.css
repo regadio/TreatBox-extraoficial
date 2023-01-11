@@ -1,3 +1,8 @@
+@font-face {
+    font-family: Bakbak One;
+    src: url(../Fuentes/BakbakOneRegular.ttf);
+  }
+  
 *{
     box-sizing: border-box;
     margin: 0;
@@ -10,10 +15,11 @@ header{
     grid-template-columns: 25% 25% 25% 25%;
     position: fixed;
     z-index: 100;
-    justify-items: center;
+    justify-content: center;
     align-items: center;
     width: 100%;
     padding: 1%;
+    font-size: 20px;
 }
 
 header a:first-of-type img{
@@ -24,12 +30,29 @@ header a:first-of-type img{
 }
 
 header a:first-of-type{
-    display: flex;
    width: 70%;
    height: 60%;
 }
 
 header a{
+    display: inline-block;
     text-decoration: none;
     color: white;
+    font-family: Bakbak One;
+}
+
+header a:nth-of-type(2),a:nth-of-type(3),a:nth-of-type(4){
+    padding-bottom: 3%;
+}
+
+header a:nth-of-type(2){
+    padding-left: 60%;
+}
+
+header a:nth-of-type(3){
+    padding-right: 60%;
+}
+
+header a:nth-of-type(4){
+    padding-left: 40%;
 }
