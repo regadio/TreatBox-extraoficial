@@ -1,5 +1,35 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 header{
     background-color: #0B252E;
     height: 90px;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    position: fixed;
+    z-index: 100;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    padding: 1%;
+}
+
+header a:first-of-type img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    
+}
+
+header a:first-of-type{
     display: flex;
+   width: 70%;
+   height: 60%;
+}
+
+header a{
+    text-decoration: none;
+    color: white;
 }
