@@ -13,9 +13,9 @@ id_user int auto_increment primary key,
 nickname varchar(100),
 email varchar(100),
 pass varchar(20),
-#session_token ns tipo de dato
+session_token varchar(1000),
 descriptionn varchar(1000),
-image longblob,
+imagen longblob,
 banner longblob
 );
 create table gender(
@@ -28,8 +28,8 @@ id_game int auto_increment primary key,
 developer varchar(40),
 year_release date,
 tittle varchar(50),
-image longblob,
-punctuation int,
+imagen longblob,
+punctuation decimal(5,2),
 descriptionn varchar(2000)
 );
 create table serie(
@@ -39,8 +39,8 @@ year_release date,
 duration varchar(100),
 season varchar(50),
 tittle varchar(50),
-image longblob,
-punctuation int,
+imagen longblob,
+punctuation decimal(5,2),
 descriptionn varchar(2000)
 );
 create table movie(
@@ -50,8 +50,9 @@ year_release date,
 duration varchar(100),
 guion varchar(50),
 tittle varchar(50),
-image longblob,
-punctuation int,
+cast varchar(500),
+imagen longblob,
+punctuation decimal(5,2),
 descriptionn varchar(2000)
 );
 #Relación N:M entre gender y serie
@@ -84,10 +85,10 @@ create table game_user (
   id_game int not null,
   id_user int not null,
   game_state varchar(30),
-  punctuation int,
   notes decimal(5,2),
   times_pass int,
   final_date datetime,
+  comment varchar(2000),
   FOREIGN KEY (id_game) REFERENCES game(id_game),
   FOREIGN KEY (id_user) REFERENCES userr(id_user)
 );
@@ -96,14 +97,15 @@ create table serie_user (
   id_serie_user int auto_increment primary key,
   id_serie int not null,
   id_user int not null,
+  serie_state varchar(30),
   director varchar(40),
   year_release date,
   duration varchar(100),
   season varchar(50),
+  notes decimal(5,2),
   tittle varchar(50),
   image longblob,
-  punctuation int,
-  descriptionn varchar(2000),
+  comment varchar(2000),
   FOREIGN KEY (id_serie) REFERENCES serie(id_serie),
   FOREIGN KEY (id_user) REFERENCES userr(id_user)
 );
@@ -113,10 +115,10 @@ create table movie_user (
   id_movie int not null,
   id_user int not null,
   movie_state varchar(30),
-  punctuation int,
   notes decimal(5,2),
   times_view int,
   final_date datetime,
+  comment varchar(2000),
   FOREIGN KEY (id_movie) REFERENCES movie(id_movie),
   FOREIGN KEY (id_user) REFERENCES userr(id_user)
 );
