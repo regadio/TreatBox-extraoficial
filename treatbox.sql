@@ -29,7 +29,7 @@ developer varchar(40),
 year_release date,
 tittle varchar(50),
 imagen longblob,
-punctuation decimal(5,2),
+punctuation decimal(3,1),
 descriptionn varchar(2000)
 );
 create table serie(
