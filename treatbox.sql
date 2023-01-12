@@ -40,7 +40,7 @@ duration varchar(100),
 season varchar(50),
 tittle varchar(50),
 imagen longblob,
-punctuation decimal(5,2),
+punctuation decimal(3,1),
 descriptionn varchar(2000)
 );
 create table movie(
@@ -52,7 +52,7 @@ guion varchar(50),
 tittle varchar(50),
 cast varchar(500),
 imagen longblob,
-punctuation decimal(5,2),
+punctuation decimal(3,1),
 descriptionn varchar(2000)
 );
 #Relación N:M entre gender y serie
@@ -85,7 +85,7 @@ create table game_user (
   id_game int not null,
   id_user int not null,
   game_state varchar(30),
-  notes decimal(5,2),
+  notes decimal(3,1),
   times_pass int,
   final_date datetime,
   comment varchar(2000),
@@ -102,7 +102,7 @@ create table serie_user (
   year_release date,
   duration varchar(100),
   season varchar(50),
-  notes decimal(5,2),
+  notes decimal(3,1),
   tittle varchar(50),
   image longblob,
   comment varchar(2000),
@@ -115,7 +115,7 @@ create table movie_user (
   id_movie int not null,
   id_user int not null,
   movie_state varchar(30),
-  notes decimal(5,2),
+  notes decimal(3,1),
   times_view int,
   final_date datetime,
   comment varchar(2000),
