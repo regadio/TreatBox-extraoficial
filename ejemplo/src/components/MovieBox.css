@@ -1,0 +1,42 @@
+*{
+    box-sizing: border-box;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    background-color: brown;
+    
+}
+
+.imagenprinci {
+
+}
+.boton {
+    position: absolute;
+    bottom: 20px;
+    cursor: pointer;
+}
+
+
+.detalles {
+    width: 500px;
+    height: 500px;
+    background-color: aqua;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: 1;
+    padding: 20px;
+}
+
+.imagendetalle {
+    width: 140px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+}
