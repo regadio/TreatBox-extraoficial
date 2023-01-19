@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './MovieBox.css';
-const API_IMG = "https://image.tmdb.org/t/p/w500/";
+const API_IMG = "https://image.tmdb.org/t/p/original";
 
 const MovieBox = ({ titel, poster_path, vote_average, release_date, overview }) => {
 
@@ -11,7 +11,7 @@ const MovieBox = ({ titel, poster_path, vote_average, release_date, overview }) 
 
     return (
         <div>
-            <div className="container" >
+            <div className="cont-imagen" >
                 <img className="imagenprinci" src={API_IMG + poster_path} />
                 <button className="boton" type="button" onClick={handleShow} >Ver más</button>
             </div>

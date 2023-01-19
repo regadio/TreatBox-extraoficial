@@ -1,0 +1,907 @@
+openapi: 3.0.0
+servers:
+  # Added by API Auto Mocking Plugin
+  - description: SwaggerHub API Auto Mocking
+    url: https://virtserver.swaggerhub.com/RREGADION/ApiTreatBox/1.0.0
+info:
+  version: "1.0.0"
+  title: home-iot-api
+  description: The API for the EatBacon IOT project
+
+paths:
+  /sessions:
+    post:
+      summary: Inicia sesión en la aplicación
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                  example: "Paco"
+                password:
+                  type: string
+                  example: "Abc123"
+      responses:
+        201:
+          description: Sesión iniciada
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  sessionToken:
+                    type: string
+                    example: "ASDFASDFASDFLASKDF"
+        400:
+          description: Faltan parámetros o son incorrectos
+        401:
+          description: Contraseña incorrecta
+          
+  /users:
+    get:
+      tags:
+        - Users
+      summary: Buscar usuarios
+      parameters:
+        - in: query
+          name: query
+          schema:
+            type: string
+          description: Buscar usuario
+        - in: header
+          name: SessionToken
+          schema:
+            type: string
+          required: true
+          description: Session token de usuario
+      responses:
+        200:
+          description: Éxito
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    username:
+                      type: string
+                      description: Nombre de usuario
+                    image:
+                      type: string
+                      description: Url de la imagen
+                    points:
+                      type: integer
+                      description: Puntos del usuario (nivel)
+    post:
+      summary: Registra un nuevo usuario en la aplicación y inicia sesión automáticamente
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                  example: "Paco"
+                email:
+                  type: string
+                  format: email
+                  example: "asdfasf@asdf.sd"
+                password:
+                  type: string
+                  example: "Abc123"
+                passwordConfirm:
+                  type: string
+                  example: "Abc123"
+      responses:
+        201:
+          description: Usuario registrado y sesión iniciada
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  sessionToken:
+                    type: string
+                    example: "ASDFASDFASDFLASKDF"
+        400:
+          description: Faltan parámetros o las contraseñas no coinciden
+        409:
+          description: El usuario ya existe
+          
+  /home:
+    get:
+      summary: Obtiene contenido reciente, popular y los usuarios con mayor nivel de la aplicación
+      responses:
+        200:
+          description: Contenido obtenido exitosamente
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  mostRecent:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        image:
+                          type: string
+                          example: "/images/x.png"
+                        name:
+                          type: string
+                          example: "Gambito de dama"
+                        type:
+                          type: string
+                          example: "series|film|game"
+                        id:
+                          type: integer
+                          example: 1
+                  mostPopular:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        image:
+                          type: string
+                          example: "/images/x.png"
+                        name:
+                          type: string
+                          example: "Gambito de dama"
+                        type:
+                          type: string
+                          example: "series|film|game"
+                        id:
+                          type: integer
+                          example: 1
+                  topUsers:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        username:
+                          type: string
+                          example: "Carlos"
+                        image:
+                           type: string
+                           example: "/asldfkj.png"
+                        points:
+                          type: integer
+                          example: 42
+  /genres/{type}:
+    get:
+      summary: Obtiene los géneros disponibles para el tipo especificado
+      parameters:
+        - name: type
+          in: path
+          required: true
+          schema:
+            type: string
+            enum:
+              - series
+              - films
+              - games
+      responses:
+        200:
+          description: Géneros obtenidos exitosamente
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: integer
+                      example: 1
+                    name:
+                      type: string
+                      example: "Action"
+  /games:
+    get:
+      summary: Busca juegos por nombre, año y género
+      parameters:
+        - name: query
+          in: query
+          schema:
+            type: string
+            example: "pokemon"
+        - name: year
+          in: query
+          schema:
+            type: integer
+            example: 2000
+        - name: genreId
+          in: query
+          schema:
+            type: integer
+            example: 4
+      responses:
+        200:
+          description: Juegos encontrados
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    image:
+                      type: string
+                      example: "/images/x.png"
+                    name:
+                      type: string
+                      example: "Metal Gear Solid"
+                    id:
+                      type: integer
+                      example: 1
+  /films:
+    get:
+      summary: Busca películas por nombre, año y género
+      parameters:
+        - name: query
+          in: query
+          schema:
+            type: string
+            example: "pokemon"
+        - name: year
+          in: query
+          schema:
+            type: integer
+            example: 2000
+        - name: genreId
+          in: query
+          schema:
+            type: integer
+            example: 4
+      responses:
+        200:
+          description: Películas encontradas
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    image:
+                      type: string
+                      example: "/images/x.png"
+                    name:
+                      type: string
+                      example: "Apocalypto"
+                    id:
+                      type: integer
+                      example: 1
+  /series:
+    get:
+      summary: Busca series por nombre, año y género
+      parameters:
+        - name: query
+          in: query
+          schema:
+            type: string
+            example: "pokemon"
+        - name: year
+          in: query
+          schema:
+            type: integer
+            example: 2000
+        - name: genreId
+          in: query
+          schema:
+            type: integer
+            example: 4
+      responses:
+        200:
+          description: Series encontradas
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    image:
+                      type: string
+                      example: "/images/x.png"
+                    name:
+                      type: string
+                      example: "Yuyu Hakusho"
+                    id:
+                      type: integer
+                      example: 1
+  /games/{id}:
+    get:
+      summary: Obtiene detalles de un juego específico
+      parameters:
+        - name: id
+          required: true
+          in: path
+          schema:
+            type: integer
+            example: 1
+      responses:
+        200:
+          description: Detalles del juego
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+                    example: "Elden Ring"
+                  developer:
+                    type: string
+                    example: "Blizzard"
+                  year:
+                    type: integer
+                    example: 2022
+                  image:
+                    type: string
+                    example: "/images/x.png"
+                  synopsis:
+                    type: string
+                    example: "Un juego blabla"
+                  score:
+                    type: number
+                    example: 8.6
+                  genres:
+                    type: array
+                    items:
+                      type: string
+                      example: "Fantasía"
+                  isAlreadyInList:
+                    type: boolean
+                    example: true
+        401:
+          description: Token de sesión inválido
+        404:
+          description: Juego no encontrado
+  /films/{id}:
+    get:
+      summary: Recuperar detalles de una película específica
+      description: Utilice este endpoint para recuperar los detalles de una película específica identificada por su id.
+      parameters:
+        - in: path
+          name: id
+          description: ID de la película a recuperar
+          required: true
+          schema:
+            type: string
+      security:
+        - bearerAuth: []
+      responses:
+        200:
+          description: Película encontrada
+          content:
+            application/json:
+              schema: 
+                type: object
+                properties:
+                  name:
+                    type: string
+                    description: Nombre de la película
+                  director:
+                    type: string
+                    description: Director de la película
+                  year:
+                    type: integer
+                    format: int32
+                    description: Año de lanzamiento de la película
+                  script:
+                    type: string
+                    description: Guionista de la película
+                  cast:
+                    type: string
+                    description: Elenco de la película
+                  image:
+                    type: string
+                    description: URL de la imagen de la película
+                  synopsis:
+                    type: string
+                    description: Sinopsis de la película
+                  score:
+                    type: number
+                    format: float
+                    description: Puntuación de la película
+                  length:
+                    type: integer
+                    format: int32
+                    description: Duración de la película
+                  genres:
+                    type: array
+                    items:
+                      type: string
+                      description: Géneros de la película
+                  isAlreadyInList:
+                    type: boolean
+                    description: Indica si la película ya está en la lista del usuario (sólo para usuarios autenticados)
+        401:
+          description: Token inválido
+        404:
+          description: Película no encontrada
+  /series/{id}:
+    get:
+      summary: Recuperar detalles de una serie específica
+      description: Utilice este endpoint para recuperar los detalles de una serie específica identificada por su id.
+      parameters:
+        - in: path
+          name: id
+          description: ID de la serie a recuperar
+          required: true
+          schema:
+            type: string
+      security:
+        - bearerAuth: []
+      responses:
+        200:
+          description: Serie encontrada
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+                    description: Nombre de la serie
+                  director:
+                    type: string
+                    description: Director de la serie
+                  year:
+                    type: integer
+                    format: int32
+                    description: Año de lanzamiento de la serie
+                  script:
+                    type: string
+                    description: Guionista de la serie
+                  cast:
+                    type: string
+                    description: Elenco de la serie
+                  image:
+                    type: string
+                    description: URL de la imagen de la serie
+                  synopsis:
+                    type: string
+                    description: Sinopsis de la serie
+                  score:
+                    type: number
+                    format: float
+                    description: Puntuación de la serie
+                  length:
+                    type: string
+                    description: Duración de la serie en formato "número de episodios - temporada"
+                  genres:
+                    type: array
+                    items:
+                      type: string
+                      description: Géneros de la serie
+                  isAlreadyInList:
+                    type: boolean
+                    description: Indica si la serie ya está en la lista del usuario (sólo para usuarios autenticados)
+        401:
+          description: Token inválido
+        404:
+          description: Serie no encontrada
+  /games/{id}/favorites:
+    put:
+      summary: Añadir o editar un juego en la lista de favoritos
+      description: Utilice este endpoint para añadir un juego a la lista de favoritos del usuario o editar una entrada existente en la lista.
+      parameters:
+        - in: path
+          name: id
+          description: ID del juego a añadir o editar
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                state:
+                  type: string
+                  description: Estado del juego (pending, playing, completed)
+                  enum: ["pending", "playing", "completed"]
+                timesPlayed:
+                  type: integer
+                  format: int32
+                  description: Número de veces jugadas (opcional, sólo permitido si state es completed)
+                score:
+                  type: number
+                  format: float
+                  description: Puntuación del juego (opcional)
+                dateCompleted:
+                  type: string
+                  format: date
+                  description: Fecha de completado en formato ISO 8601 (opcional)
+                notes:
+                  type: string
+                  description: Notas adicionales sobre el juego (opcional)
+      security:
+        - bearerAuth: []
+      responses:
+        200:
+          description: Juego añadido o editado con éxito
+        401:
+          description: Token inválido
+        404:
+          description: Juego no encontrado
+  /films/{id}/favorites:
+    put:
+      summary: Añadir o editar una película en la lista de favoritos
+      description: Utilice este endpoint para añadir una película a la lista de favoritos del usuario o editar una entrada existente en la lista.
+      parameters:
+        - in: path
+          name: id
+          description: ID de la película a añadir o editar
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                state:
+                  type: string
+                  description: Estado de la película (pending, viewed)
+                  enum: ["pending", "viewed"]
+                timesViewed:
+                  type: integer
+                  format: int32
+                  description: Número de veces vistas (opcional, sólo permitido si state es viewed)
+                score:
+                  type: number
+                  format: float
+                  description: Puntuación de la película (opcional)
+                dateViewed:
+                  type: string
+                  format: date
+                  description: Fecha de vista en formato ISO 8601 (opcional)
+                notes:
+                  type: string
+                  description: Notas adicionales sobre la película (opcional)
+      security:
+        - bearerAuth: []
+      responses:
+        200:
+          description: Película añadida o editada con éxito
+        401:
+          description: Token inválido
+        404:
+          description: Película no encontrada
+  /series/{id}/favorites:
+    put:
+      tags:
+        - Series
+      summary: Añadir o editar una serie en la lista de favoritos
+      description: Utilice este endpoint para añadir una serie a la lista de favoritos del usuario o editar una entrada existente en la lista.
+      parameters:
+        - in: path
+          name: id
+          schema:
+            type: integer
+          required: true
+          description: ID de la serie
+        - in: header
+          name: SessionToken
+          schema:
+            type: string
+          required: true
+          description: Usuario session token
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                state:
+                  type: string
+                  enum: [pending, watching, viewed]
+                  description: State of the series (pending, watching, viewed)
+                timesViewed:
+                  type: integer
+                  description: Number of times the series has been viewed (optional)
+                score:
+                  type: integer
+                  description: User's score for the series (optional)
+                dateViewed:
+                  type: string
+                  format: date-time
+                  description: Date the series was last viewed (optional)
+                notes:
+                  type: string
+                  description: User's notes on the series (optional)
+      responses:
+        200:
+          description: Series successfully added or edited in the favorites list
+        401:
+          description: Unauthorized - Invalid session token
+        404:
+          description: Not Found - Series not found with that ID
+  /users/{nick}:
+    get:
+      tags:
+        - Users
+      summary: Get user data
+      parameters:
+        - in: path
+          name: nick
+          schema:
+            type: string
+          required: true
+          description: User's username
+        - in: header
+          name: SessionToken
+          schema:
+            type: string
+          required: false
+          description: User's session token
+      responses:
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  banner:
+                    type: string
+                    description: User's banner
+                  profilePicture:
+                    type: string
+                    description: User's profile picture
+                  username:
+                    type: string
+                    description: User's username
+                  description:
+                    type: string
+                    description: User's description
+                  games:
+                    type: object
+                    properties:
+                      totalCount:
+                        type: integer
+                        description: Total number of games evaluated by the user
+                      averageScore:
+                        type: integer
+                        description: Average score for games evaluated by the user
+                  films:
+                    type: object
+                    properties:
+                      totalCount:
+                        type: integer
+                        description: Total number of films evaluated by the user
+                      averageScore:
+                        type: integer
+                        description: Average score for films evaluated by the user
+                  series:
+                    type: object
+                    properties:
+                      totalCount:
+                        type: integer
+                        description: Total number of series evaluated by the user
+                      averageScore:
+                        type: integer
+                        description: Average score for series evaluated by the user
+                  genres:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        name:
+                          type: string
+                          description: Name of the genre
+                        count:
+                          type: integer
+                          description: Number of items from that genre evaluated by the user
+                  editable:
+                    type: boolean
+                    description: Indicates if the profile can be edited (only true if the session token corresponds to the specified username)
+  /profile:
+    put:
+      tags:
+        - Profile
+      summary: Update profile information
+      parameters:
+        - in: header
+          name: SessionToken
+          schema:
+            type: string
+          required: true
+          description: User's session token
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  type: string
+                  description: New username (optional)
+                description:
+                  type: string
+                  description: New description (optional)
+                profilePicture:
+                  type: string
+                  format: binary
+                  description: Base64 encoded PNG or JPG for new profile picture (optional)
+                banner:
+                  type: string
+                  format: binary
+                  description: Base64 encoded PNG or JPG for new banner (optional)
+      responses:
+        400:
+          description: Bad Request - Incorrectly encoded image or other error in parameters
+        401:
+          description: Unauthorized - Missing or invalid session token
+        200:
+          description: Profile successfully updated
+  /lists:
+    get:
+      tags:
+        - Lists
+      summary: Get list items
+      parameters:
+        - in: query
+          name: query
+          schema:
+            type: string
+          description: Search term for the items
+        - in: query
+          name: type
+          schema:
+            type: string
+            enum: [game, film, series]
+          description: Type of items to search for
+        - in: query
+          name: genreId
+          schema:
+            type: integer
+          description: ID of the genre to search for
+        - in: query
+          name: score
+          schema:
+            type: integer
+          description: Minimum score for the items
+        - in: query
+          name: times
+          schema:
+            type: integer
+          description: Minimum number of times the item has been played/viewed
+        - in: query
+          name: is_finished
+          schema:
+            type: boolean
+          description: Indicates if the item has been completed
+        - in: query
+          name: year_finished
+          schema:
+            type: string
+            format: date-time
+          description: Year the item was completed (if is_finished is true)
+        - in: query
+          name: is_active
+          schema:
+            type: boolean
+          description: Indicates if the item is currently being played/viewed
+        - in: header
+          name: SessionToken
+          schema:
+            type: string
+          required: true
+          description: User's session token
+      responses:
+        200:
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  games:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        name:
+                          type: string
+                          description: Name of the game
+                        image:
+                          type: string
+                          description: URL of the game's image
+                        state:
+                          type: string
+                          enum: [pending, playing, completed]
+                          description: State of the game in the user's list
+                        timesPlayed:
+                          type: integer
+                          description: Number of times the game has been played (optional)
+                        score:
+                          type: integer
+                          description: Score given to the game (optional)
+                        dateCompleted:
+                          type: string
+                          format: date-time
+                          description: Date the game was completed (optional)
+                        notes:
+                          type: string
+                          description: Notes about the game (optional)
+                  films:
+                    type: array
+                    items: 
+                      type: object
+                      properties:
+                        name:
+                          type: string
+                          description: Name of the film
+                        image:
+                          type: string
+                          description: URL of the film's image
+                        state:
+                          type: string
+                          enum: [pending, viewed]
+                          description: State of the film in the user's list
+                        timesViewed:
+                          type: integer
+                          description: Number of times the film has been viewed (optional)
+                        score:
+                          type: integer
+                          description: Score given to the film (optional)
+                        dateViewed:
+                          type: string
+                          format: date-time
+                          description: Date the film was viewed (optional)
+                        notes:
+                          type: string
+                          description: Notes about the film (optional)
+                  series:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        name:
+                          type: string
+                          description: Name of the series
+                        image:
+                          type: string
+                          description: URL of the series' image
+                        state:
+                          type: string
+                          enum: [pending, watching, viewed]
+                          description: State of the series in the user's list
+                        timesViewed:
+                          type: integer
+                          description: Number of times the series has been viewed (optional)
+                        score:
+                          type: integer
+                          description: Score given to the series (optional)
+                        dateViewed:
+                          type: string
+                          format: date-time
+                          description: Date the series was viewed (optional)
+                        notes:
+                          type: string
+                          description: Notes about the series (optional)
+components:                         
+    securitySchemes:
+      bearerAuth:
+        type: http
+        scheme: bearer
+        bearerFormat: JWT
+
+                            

@@ -1,17 +1,20 @@
 *{
     box-sizing: border-box;
 }
-.container {
+.cont-imagen {
     display: flex;
     justify-content: center;
     position: relative;
-    background-color: brown;
+    padding: 10px;
+    background-color: gray;
+    margin: 10px;
     
 }
-
-.imagenprinci {
-
+.imagenprinci{
+    width: 200px;
+    height: 300px;
 }
+
 .boton {
     position: absolute;
     bottom: 20px;

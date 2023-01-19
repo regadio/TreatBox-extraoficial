@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import MovieBox from '../components/MovieBox';
+import './Movie.css';
 
-const API_URL = "https://api.themoviedb.org/3/movie/popular?api_key=1b4876eaca59dc1cf248c634897da2a7";
-const API_SEARCH = "https://api.themoviedb.org/3/search/movie?api_key=1b4876eaca59dc1cf248c634897da2a7&query";
+
+
+const API_URL = "https://api.themoviedb.org/3/movie/popular?api_key=1b4876eaca59dc1cf248c634897da2a7&language=es";
+const API_SEARCH = "https://api.themoviedb.org/3/search/movie?api_key=1b4876eaca59dc1cf248c634897da2a7language=es&query";
 
 function Movie() {
   const [movies, setMovies] = useState([]);
@@ -43,9 +46,10 @@ function Movie() {
       </form>
 
       <div>
+        <h2>Top Popular</h2>
         {
           movies.length > 0 ? (
-            <div>
+            <div className='principal'>
               {movies.map((movieReq) =>
                 <MovieBox key={movieReq.id} {...movieReq} />)}
             </div>
