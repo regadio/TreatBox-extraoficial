@@ -39,13 +39,13 @@ function Movie() {
   }
 
   return (
-    <div>
+    <div className='todo'>
       <form class="" onSubmit={searchMovie}>
         <input class="" type="search" placeholder="Buscador pelicula" value={query} onChange={changeHandler} />
         <button class="" type="submit" >Search</button>
       </form>
 
-      <div>
+      <div className='tarjetatotal'>
         <h2>Top Popular</h2>
         {
           movies.length > 0 ? (

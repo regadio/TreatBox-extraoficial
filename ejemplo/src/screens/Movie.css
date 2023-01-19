@@ -1,5 +1,15 @@
+
+.todo{
+    background-color: #021012;
+
+}
+
+.tarjetatotal{
+    margin: 0 10% 0 10%;
+}
+
 .principal {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    }
+    justify-content: space-around;
+}
