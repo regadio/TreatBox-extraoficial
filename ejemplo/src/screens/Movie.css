@@ -1,4 +1,5 @@
-.principal{
-    display: grid;
-    grid-template-columns: repeat(6,1fr);
-}
+.principal {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    }
