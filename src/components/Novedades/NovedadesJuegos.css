@@ -1,0 +1,25 @@
+@font-face {
+    font-family: Kum;
+    src: url('../fonts/KumbhSans-Regular.ttf');
+}
+
+
+
+.contenedorCaratulas{
+    display: flex;
+    height: 300px;
+    justify-content: space-evenly; 
+    
+}
+
+.Container{
+    background-color: #021012;
+}
+
+.titleNovedades{
+    margin-left:40px;
+    color:white;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    font-family: Kum;
+}

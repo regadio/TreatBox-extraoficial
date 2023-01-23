@@ -1,0 +1,47 @@
+@font-face {
+    font-family: Kum;
+    src: url(../fonts/KumbhSans-Regular.ttf);
+  }
+
+  *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+.contenedorPeliculas{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    font-family: Kum;
+    font-size: 13px;
+    color: white;
+    background-color: #07181E;
+
+    /*border: 1px solid blue;*/
+
+}
+
+.pelicula{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 155px;
+    margin: 0 4% 0 2%;
+    background-color: #0B252E;
+    border-radius: 10%;
+    overflow: hidden;
+
+
+    /*border: 1px solid red;*/
+}
+.pelicula img{
+    width: 155px;
+    border-radius: 10%;
+}
+
+/*.titulo{
+    border: 1px solid rgb(19, 236, 48);
+
+
+}*/
