@@ -1,0 +1,65 @@
+@font-face {
+    font-family: Kum;
+    src: url('../fonts/KumbhSans-Regular.ttf');
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+}
+
+.seccion{
+    color: white;
+    font-family: Kum;
+    font-size: 20px;
+    margin-bottom: 30px;
+    margin-left: 40px;
+}
+
+.componente{
+    display: flex;
+    background-color: #021012;
+    width: 100%;
+    flex-direction: column;
+}
+
+.contenido{
+    height: 250px;
+    background-color: #0b252e;
+    border-radius: 5px;
+    width: 140px;
+    overflow: hidden;
+   
+
+}
+
+.contenedor{
+    display: flex;
+    justify-content: space-around;
+}
+img{
+    height: 200px;
+    width: 100%;
+    border-top-right-radius:5px ;
+    border-top-left-radius:5px ;
+}
+
+.titulo{
+    margin-left: 10px;
+    margin-top: 5px;
+    width: 120px;
+    color:white;
+    font-family: Kum;
+    text-align: center;
+    
+}
+
+.contenedor  {
+    text-decoration: none;
+}
+
+.link{
+    color:white;
+    text-decoration: none;
+}

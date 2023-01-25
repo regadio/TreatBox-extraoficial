@@ -24,7 +24,7 @@ function Footer() {
         </div>
 
         <div class="copyr">
-            <a href="#">&copy 2022 TreatBox</a>
+            <a href="#">© 2022 TreatBox . Reservados todos los derechos. Diseño web: Equipo Azul.</a>
         </div>
     </footer>
     </div>

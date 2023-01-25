@@ -20,7 +20,7 @@ footer{
                     "copyr copyr copyr copyr"
     
     ;
-    grid-template-columns: 25% 25% 25% 25%;
+    grid-template-columns: 35% 35% 15% 25%;
 
     font-family: BakBak One;
 }
@@ -37,7 +37,7 @@ footer{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: left;
     
 
 }
@@ -46,7 +46,7 @@ footer{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: left;
 
 }
 .col3{
