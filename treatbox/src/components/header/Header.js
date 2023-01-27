@@ -5,12 +5,12 @@ function Header() {
   return (
     <div className="header">
         <header>
-         <a class="logo" href=""><img src={logo} alt="Logo" width="200px"/></a>
+         <a class="logo" href="/inicio"><img src={logo} alt="Logo" width="200px"/></a>
             <ul class="nav">
-                <li><a href="">Buscar</a></li>
-                <li><a href="">Mis listas</a></li>
+                <li><a href="/buscar">Buscar</a></li>
+                <li><a href="#">Mis listas</a></li>
             </ul>
-            <a class="login" href="">Login</a>
+            <a class="login" href="/login">Login</a>
         </header>
     </div>
   );

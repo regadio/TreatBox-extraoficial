@@ -2,6 +2,10 @@
     font-family: BakBak One;
     src: url(../fonts/BakbakOneRegular.ttf);
   }
+  @font-face {
+    font-family: kum;
+    src: url(../fonts/KumbhSans-Regular.ttf);
+  }
 
 *{
     box-sizing: border-box;
@@ -29,8 +33,10 @@ footer{
     grid-area: logo;
 }
 .logo2>img{
-    opacity: 60%;
+    opacity: 20%;
     margin: 15px;
+    width: 300px;
+    height: 100px;
 }
 .col1{
     grid-area: col1;
@@ -58,4 +64,10 @@ footer{
     display: flex;
     align-items: center;    
     justify-content: center;
+    margin-bottom:1%;
+}
+
+.copyr a{
+    font-family: kum;
+    font-size: 12px;
 }
