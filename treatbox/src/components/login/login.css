@@ -1,6 +1,6 @@
 @font-face {
     font-family: BakBak One;
-    src: url(./../fonts/BakbakOneRegular.ttf);
+    src: url(../../components/fonts/BakbakOneRegular.ttf);
   }
 
 *{

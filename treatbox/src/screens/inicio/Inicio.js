@@ -34,23 +34,23 @@ function Inicio(props) {
       <div className='filtros'>
         <FiltroBasico></FiltroBasico><FiltroGenero></FiltroGenero><FiltroAno></FiltroAno>
       </div>
-      <div className='peliContainer'>
+      <div className='tipoContainer'>
         <NovedadesPeliculas />
       </div>
-      <div className='serieContainer'>
+      <div className='tipoContainer'>
         <NovedadesSeries />
       </div>
-      <div className='juegoContainer'>
+      <div className='tipoContainer'>
         <NovedadesJuegos />
       </div>
-      <div className='rankin'>
+      {/* <div className='rankin'>
         <p className='rankinTitle'>Top usuarios</p>
         <Ranking></Ranking>
         <Ranking></Ranking>
         <Ranking></Ranking>
         <Ranking></Ranking>
         <Ranking></Ranking>
-      </div>
+      </div> */}
       <Footer></Footer>
     </div>
   );

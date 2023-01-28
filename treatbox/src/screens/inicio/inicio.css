@@ -22,10 +22,8 @@ body{
     background-color: #021012;
 }
 
-.peliContainer, .serieContainer, .juegoContainer{
-    width: 90%;
-    margin-left: 5%;
-    margin-bottom: 5%;
+.tipoContainer{
+margin: 0 20% ;
     
 }
 

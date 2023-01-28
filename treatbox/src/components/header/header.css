@@ -1,7 +1,7 @@
 @font-face {
     font-family: BakBak One;
     src: url(./../fonts/BakbakOneRegular.ttf);
-  }
+}
 
 * {
     padding: 0;
@@ -9,9 +9,11 @@
     box-sizing: border-box;
     color: #fff;
 }
-a{
+
+a {
     font-family: BakBak One;
 }
+
 header {
     font-size: 16px;
     position: relative;
@@ -23,30 +25,62 @@ header {
     height: 85px;
     font-family: BakBak One;
 }
-.logo{
+
+.logo {
     margin-left: 5%;
-      width: 200px;
-      height: 30px;
+    width: 200px;
+    height: 30px;
 
 }
-.logo img{
+
+.logo img {
     width: 200px;
-      height: 30px;
+    height: 30px;
 }
-.nav{
+
+.nav {
     position: absolute;
     display: flex;
     left: 44%;
 }
-.nav li{
+
+.nav li {
+    padding: 7px;
     list-style: none;
-    margin: 30px;
-    
+    margin: 28px;
+    border-radius: 3px;
+    cursor: pointer;
+
 }
-.nav li a{
+
+.nav li a {
     text-decoration: none;
 }
-.login{
+
+.login {
     margin-right: 5%;
     text-decoration: none;
 }
+/* INICIO MENU DESPLEGABLE */
+.desplegable-li {
+    position: relative;
+}
+.desplegable {
+    position: absolute;
+    background-color: #0B252E;
+    display: none;
+}
+
+.desplegable-li:hover .desplegable {
+    display: flex;
+    flex-direction: column;
+}
+.desplegable li{
+
+}
+.desplegable li a{
+    
+}
+
+
+/* FIN MENU DESPLEGABLE */

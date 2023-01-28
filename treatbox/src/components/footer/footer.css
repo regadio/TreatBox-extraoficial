@@ -24,19 +24,19 @@ footer{
                     "copyr copyr copyr copyr"
     
     ;
-    grid-template-columns: 35% 35% 15% 25%;
+    grid-template-columns: 30% 35% 15%;
 
     font-family: BakBak One;
 }
 
-.logo{
+.logo-footer{
     grid-area: logo;
 }
-.logo2>img{
+.logo-footer>img{
     opacity: 20%;
     margin: 15px;
-    width: 300px;
-    height: 100px;
+    width: 50%;
+    height: 50%;
 }
 .col1{
     grid-area: col1;

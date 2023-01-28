@@ -1,0 +1,119 @@
+@font-face {
+  font-family: Kum;
+  src: url('../fonts/KumbhSans-Regular.ttf');
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0%;
+  padding: 0%;
+}
+.seccion{
+  display: flex;
+  justify-content: space-between;
+}
+.mas{
+  cursor: pointer;
+}
+
+.contenedor {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+  overflow: hidden;
+  height: 310px;
+  margin-bottom: 20px;
+}
+
+.activo{
+  overflow: none;
+  height: 100%;
+}
+
+.contenido {
+  border-radius: 8px;
+  margin: 0 3% 6%;
+  padding-bottom: 5px;
+  width: 15%;
+  background-color: #0B252E;
+}
+
+.contenido img {
+  border-radius: 5px 5px 0 0;
+  object-fit: contain;
+}
+
+.titulo {
+  text-align: center;
+}
+.tipo{
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+ 
+
+@media (max-width: 1700px) {
+  .contenido {
+    width: 18%;
+  }
+  .contenedor {
+    height: 330px;
+  }
+  .activo{
+    overflow: none;
+    height: 100%;
+  }
+}
+@media (max-width: 1500px) {
+  .contenido {
+    width: 20%;
+  }
+  .contenedor {
+    height: 330px;
+  }
+  .activo{
+    overflow: none;
+    height: 100%;
+  }
+}
+@media (max-width: 1350px) {
+  .contenido {
+    width: 24%;
+  }
+  .contenedor {
+    height: 370px;
+  }
+  .activo{
+    overflow: none;
+    height: 100%;
+  }
+}
+@media (max-width: 1300px) {
+  .contenido {
+    width: 28%;
+  }
+  .contenedor {
+    height: 370px;
+  }
+  .activo{
+    overflow: none;
+    height: 100%;
+  }
+}
+@media (max-width: 1200px) {
+  .contenido {
+    width: 33%;
+  }
+  .contenedor {
+    height: 390px;
+  }
+  .activo{
+    overflow: none;
+    height: 100%;
+  }
+  .tipo{
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+}
