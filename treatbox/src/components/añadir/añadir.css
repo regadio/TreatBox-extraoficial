@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.clearfix {
+    float: none;
+    clear: both;
+}
+
+.total-añadir {
+    position: absolute;
+    background-color: #06252A;
+    margin-left: 28%;
+    margin-right: 28%;
+    top: 15%;
+    border-radius: 5px;
+}
+
+.añadir {
+    padding: 2%;
+}
+
+
+.añadir-poster {
+    display: flex;
+    align-items: center;
+}
+
+.añadir-poster img {
+    width: 15%;
+}
+
+.añadir-poster h2 {
+    margin-left: 20%;
+    margin-right: 20%;
+}
+/* INICIO LINEA 1 */
+
+.row1 {
+    display: flex;
+
+}
+
+.row1 div {
+    display: flex;
+    flex-direction: column;
+}
+
+.row1 div input, .row1 div select, .row2 div input{
+ background-color: #021012;
+ height: 25px;
+}
+
+.row1 input,
+.row1 select {
+    border-radius: 3px;
+    border: 0;
+}
+
+/* FIN LINEA 1 */
+
+
+/* INICIO LINEA 2  */
+.row2 {
+
+}
+.row2 div{
+    display: flex;
+    flex-direction: column;
+}
+.row2 div input{
+    border: 0;
+}
+.row2 div input[type="text"]{
+    height: 80px;
+    
+}
+
+/* FIN LINEA 2  */
+
+/* INICIO LINEA 3 BOTOM */
+.guardar-btn {
+
+}
+
+/* FIN LINEA 3 BOTOM */

@@ -14,7 +14,6 @@
 .contenedor-poster-detalles {
     padding: 4%;
     display: flex;
-    border: 5px solid greenyellow;
     background-color: rgb(7, 7, 54);
 }
 
@@ -33,7 +32,7 @@
 /* FIN IMAGEN DE FONDO */
 
 .poster {
-    border: 1px solid red;
+    
 }
 
 /* INICIO ESTILOS DE DIV DETALLES */

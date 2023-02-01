@@ -3,7 +3,7 @@ import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import NotFound from './screens/NotFound/NotFound';
 import Inicio from './screens/inicio/Inicio';
-import Detalle from './components/detalle/Detalle';
+import Detalle from './components/detalle/Detallepelicula';
 import Login from './screens/session/Session';
 import Buscarpeliculas from './screens/buscar/buscarpeliculas/Buscarpeliculas';
 import Buscarseries from './screens/buscar/buscarseries/Buscarseries';

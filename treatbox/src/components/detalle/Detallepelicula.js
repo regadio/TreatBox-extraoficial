@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import './Detalle.css'
+import Añadir from '../añadir/Añadirpelicula';
 
 function Detalle() {
   const [movie, setMovie] = useState({});
+  const [mostrarAñadir, setMostrarAñadir] = useState(false);
   let { id } = useParams();
   useEffect(() => {
     axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=1b4876eaca59dc1cf248c634897da2a7&language=es`)
@@ -22,10 +24,12 @@ function Detalle() {
 
   return (
     <div className='total'>
-          {/* <img className='imagen-fondo' src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`} alt={movie.title} /> */}
+      {mostrarAñadir && <Añadir />}
+      {/* <img className='imagen-fondo' src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`} alt={movie.title} /> */}
       <div className='contenedor-poster-detalles'>
         <div className='poster'>
           <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt={movie.title} />
+          <button className='boton-añadir' onClick={() => setMostrarAñadir(true)}>Añadir</button>
         </div>
         <div className='detalles'>
           <div className='nombre'>
@@ -38,11 +42,11 @@ function Detalle() {
             <div className='generos'>
               {movie.genres.map(genre => <div key={genre.id}>{genre.name}</div>)}
             </div>
-            
+
           </div>
           <div className='duracion'>
-              Duración: {movie.runtime}m
-            </div>
+            Duración: {movie.runtime}m
+          </div>
           <div className='lenguaje'>
             ({movie.original_language.toUpperCase()})
           </div>
