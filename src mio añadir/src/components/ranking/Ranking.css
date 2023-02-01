@@ -1,0 +1,78 @@
+@font-face {
+    font-family: Khula;
+    src: url(../fonts/Khula-Regular.ttf);
+}
+@font-face {
+    font-family: Bakbak;
+    src: url(../fonts/BakbakOneRegular.ttf);
+  }
+  @font-face {
+    font-family: Kum;
+    src: url(../fonts/KumbhSans-Regular.ttf);
+  }
+
+  .rankUserInfo{
+    width: 500px;
+    height: 125px;
+    position: relative;
+    z-index: 0; 
+  }
+  img{
+    object-fit: fill;
+    width: 100%;
+    height: 100%;
+  }
+  .avatar{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+    margin-top: 10px;
+    margin-left: 10px;
+ 
+  }
+  .avatarRank{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: rgb(69, 206, 15);
+    position: absolute;
+    z-index: 5; 
+    margin-top: 12.5px;
+    margin-left: 15px;
+
+  }
+
+  div p{
+    position:absolute;
+    z-index: 100;
+    font-family: Khula;
+  }
+
+  .usuario{
+    margin-left: 135px;
+    margin-top: 45px;
+    font-size: 18px;
+  }
+
+  .nivel{
+    margin-left: 135px;
+    margin-top: 65px;
+    font-size: 14px;
+  }
+
+  .rank{
+    margin-left: 250px;
+    margin-top: 40px;
+    font-size: 30px;
+  }
+
+  .puntos{
+    margin-left: 415px;
+    margin-top: 50px;
+    font-size: 18px;
+  }
+
+
+
+  

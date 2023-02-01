@@ -1,0 +1,51 @@
+*{
+    box-sizing: border-box;
+    
+}
+
+.FiltroContainer{
+    background-color: #021012;
+    padding: 1%;
+    display: inline-block;
+}
+
+.custom-option, .selectedOption{
+    display: flex;
+    justify-content: center;
+    width: 100px;
+    
+    padding: 3px;
+    cursor: pointer;
+    
+}
+
+.selectedOption{
+    border-radius: 10px;
+    margin-bottom: 3px;
+    background-color: #123F4F;
+}
+
+.custom-option:first-of-type{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.custom-option:last-of-type{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.custom-option:hover{
+    background-color: #1d637c;
+}
+
+.custom-option{
+    background-color: #0c2a35;
+}
+
+.TitleTipo{
+    display: flex;
+    justify-content: center;
+    width: 100px;
+    margin-bottom: 2px;
+}

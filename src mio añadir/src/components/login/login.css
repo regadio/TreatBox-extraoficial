@@ -1,0 +1,14 @@
+@font-face {
+    font-family: BakBak One;
+    src: url(../../components/fonts/BakbakOneRegular.ttf);
+  }
+
+*{
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+}
+
+.input-texto, .check-box, .login-register, .submit-boton, span{
+    font-family: BakBak One;
+}

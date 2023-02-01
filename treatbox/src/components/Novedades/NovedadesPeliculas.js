@@ -31,7 +31,7 @@ function NovedadesPeliculas() {
           Novedades películas
         </div>
         <div className='mas' onClick={handleClick} >
-          Ver más
+          {botonActivo ? "Ver menos" : "Ver más"}
         </div>
       </div>
       <div className={`contenedor ${botonActivo ? 'activo' : ''}`}>

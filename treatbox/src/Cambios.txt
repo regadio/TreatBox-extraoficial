@@ -1,3 +1,0 @@
-Contenedor Ajustados y hechos responsive 
-Barra de buqueda el apartado buscar con un desplegable(Falta dar estilos)
-Corregido error de footer

@@ -1,0 +1,75 @@
+@font-face {
+    font-family: Khula;
+    src: url(../fonts/Khula-Regular.ttf);
+}
+@font-face {
+    font-family: Bakbak;
+    src: url(../fonts/BakbakOneRegular.ttf);
+  }
+  @font-face {
+    font-family: Kum;
+    src: url(../fonts/KumbhSans-Regular.ttf);
+  }
+
+.chart{
+    width: 750px;
+    height: 450px;
+    background-color: #07181E;
+    border-radius: 8px ;
+
+}
+p{
+    font-family: Khula;
+
+}
+.uno{
+    padding-top: 50px;
+    text-align: center;
+    font-size: 20px;
+    font-family: Kum;
+    font-weight: 550;
+}
+.dos{
+    margin-top: 30px;
+    margin-left: 50px;
+    color: #99bbc5;
+}
+.tres, .cuatro{
+    width: 300px;
+    height: 80px;
+    background-color: #202f34;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 17px;
+    font-size: 12px;
+}
+
+.container{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 50px;
+}
+
+button{
+    background-color: #24629B;
+    border: none;
+    padding: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-radius: 5px;
+    font-family: Bakbak;
+    cursor: pointer;
+    margin-left: 300px;
+    margin-top: 90px;
+    
+
+}
+.tres img,.cuatro img{
+    width: 40px;
+    height: 40px;
+}
+.tres img{
+    margin-right: 20px;
+}
