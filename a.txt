@@ -1,0 +1,1 @@
+hacer peticion put para añadir peliculas a tipo:user con todos los datos y estando verificado
