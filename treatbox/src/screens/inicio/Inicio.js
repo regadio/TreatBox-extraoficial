@@ -14,16 +14,6 @@ import FiltroAno from '../../components/filters/FiltroAno';
 import './inicio.css';
 
 function Inicio(props) {
-  const username = localStorage.getItem("username")
-  useEffect(() => {
-    const token = localStorage.getItem("token")
-    axios.get(`/users/${username}`,{},{
-      header:{
-        "session_token" : token
-      }
-    })
-
-  }, [username]);
 
   return (
     <div>

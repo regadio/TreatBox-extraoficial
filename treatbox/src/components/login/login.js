@@ -21,7 +21,7 @@ function Login() {
       });
       setError('');
       setIsLoggedIn(true);
-      localStorage.setItem("username", username);
+      localStorage.setItem("session_token", res.data.session_token);
     } catch (err) {
       if (err.response.status === 400) {
         setError('La contraseña o el usuario no existen');

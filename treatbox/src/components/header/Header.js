@@ -9,12 +9,9 @@ import defaultImg from '../Icons/usuario-de-perfil.png';
 function Header() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  const getSessionToken = () => {
-    return localStorage.getItem("username");//estoy usando el username a modo de tokken de sesión para testear
-  };
   // Se debe validar el token de sesión aquí
   const checkSessionToken = () => {
-    const sessionToken = getSessionToken();
+    const sessionToken = localStorage.getItem("session_token");
 
     if (sessionToken) {
       setIsLoggedIn(true);
@@ -23,7 +20,7 @@ function Header() {
 
 
   const handleLogout = () => {
-    localStorage.removeItem("username"); //
+    localStorage.removeItem("session_token"); //
     //Redirigir a la página de inicio
     window.location.replace("/inicio");
   };
