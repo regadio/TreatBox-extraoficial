@@ -9,7 +9,7 @@ function Session() {
     function register() {
         let x = document.getElementById("login");
         let y = document.getElementById("register");
-        let z = document.getElementById("boton-absoluto");    
+        let z = document.getElementById("boton-absoluto");
         x.style.left = "-400px";
         y.style.left = "190px";
         z.style.left = "184px";
@@ -32,8 +32,8 @@ function Session() {
                         <button type="button" className="botones" onClick={log}>Iniciar Sesión</button>
                         <button type="button" className="botones" onClick={register}>Registrarse</button>
                     </div>
-                   <Login/>
-                    <Register/>
+                    <Login />
+                    <Register />
                 </div>
             </div>
         </div>

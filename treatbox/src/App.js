@@ -9,20 +9,29 @@ import Buscarpeliculas from './screens/buscar/buscarpeliculas/Buscarpeliculas';
 import Buscarseries from './screens/buscar/buscarseries/Buscarseries';
 import Buscarvideojuegos from './screens/buscar/buscarvideojuegos/Buscarvideojuegos';
 import Contacto from './screens/contacto/Contacto';
-
+import Header from './components/header/Header';
+import Footer from './components/footer/Footer';
+import Contenedorfiltros from './components/filtros/Contenedorfiltros';
 function App() {
   return (
-    <Routes>
-      <Route path="/login" element={<Login/>} />
-      <Route path="/inicio" element={<Inicio/>} />
-      <Route path="/detalle/:id" element={<Detalle/>} />
-      <Route path='/inicio/películas' element={<Buscarpeliculas/>}/>
-      <Route path='/inicio/series' element={<Buscarseries/>}/>
-      <Route path='/inicio/juegos' element={<Buscarvideojuegos/>}/>
-      <Route path='/contacto' element={<Contacto/>}/>
-      <Route path="*" element={<NotFound/>} />
-    </Routes>
+    <>
+      <Header />
+      <Contenedorfiltros/>
+      <Routes>        
+        <Route path="/" element={<Inicio />} />
+        <Route path="/inicio" element={<Inicio />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/detalle/:id" element={<Detalle />} />
+        <Route path='/inicio/peliculas' element={<Buscarpeliculas />} />
+        <Route path='/inicio/series' element={<Buscarseries />} />
+        <Route path='/inicio/juegos' element={<Buscarvideojuegos />} />
+        <Route path='/contacto' element={<Contacto />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+      <Footer />
+    </>
   );
 }
+
 
 export default App;

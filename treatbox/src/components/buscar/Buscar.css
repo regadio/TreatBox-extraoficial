@@ -1,24 +1,56 @@
+@font-face {
+    font-family: Kum;
+    src: url(../../components/fonts/KumbhSans-Regular.ttf);
+  }
 
-.barra-busqueda {
-    border-radius: 5px;
-}
+  *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 
-.barra-input {
-    border: none;
-    background-color: #123F4F;
-}
-
-.barra-boton {
-    background-color: #123F4F;
+.contenedorC{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    font-family: Kum;
+    font-size: 13px;
     color: white;
-    border: none;
-    cursor: pointer;
+    background-color: #07181E;
+
+    /*border: 1px solid blue;*/
+
 }
 
-.barra-boton:hover {
-    background-color: #3e4041;
+.contenidoC{
+    
+    margin-bottom: 5%;
+    width: 130px;
+    margin-left: 3%;
+    margin-right: 3%;
+    background-color: #0B252E;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 250px;
+
+    /*border: 1px solid red;*/
+}
+.contenidoC img{
+    width: 130px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
 }
 
-.barra-input::placeholder {
-    color: azure;
+.tituloC{
+    font-family: kum;
+    width: 110px;
+    margin-left: 10px;
+    margin-top: 5px;
+    text-align: center;
+
+}
+
+.linko{
+    text-decoration: none;
+    color: white;
 }

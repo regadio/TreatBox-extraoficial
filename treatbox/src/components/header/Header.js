@@ -5,9 +5,10 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import defaultImg from '../Icons/usuario-de-perfil.png';
-
+import FiltroBasico from '../filtros/FiltroBasico';
 function Header() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+
 
   // Se debe validar el token de sesión aquí
   const checkSessionToken = () => {
@@ -18,7 +19,6 @@ function Header() {
     }
   };
 
-
   const handleLogout = () => {
     localStorage.removeItem("session_token"); //
     //Redirigir a la página de inicio
@@ -28,34 +28,35 @@ function Header() {
   useEffect(() => {
     checkSessionToken();
   }, []);
-
-
+  const enviarTipo = (value) => {
+    sessionStorage.setItem("tipo",value);
+  }
 
   return (
     <div className="header">
       <header>
-        <a className="logo" href="/inicio"><img src={logo} alt="Logo" width="200px" /></a>
+        <Link className="logo" to="/inicio"><img src={logo} alt="Logo" width="200px" /></Link>
         <ul className="nav">
           <li className='desplegable-li'>
-            <a href="/inicio">Buscar</a>
+            <Link to="/inicio">Buscar</Link>
             <ul className="desplegable">
-              <li><a href={`/inicio/peliculas`}>Peliculas</a></li>
-              <li><a href={`/inicio/series`}>Series</a></li>
-              <li><a href={`/inicio/juegos`}>Juegos</a></li>
+              <li><Link onClick={() => enviarTipo("Películas")} to="/inicio/peliculas">Películas</Link></li>
+              <li><Link onClick={() => enviarTipo("Series")} to="/inicio/series">Series</Link></li>
+              <li><Link onClick={() => enviarTipo("Juegos")} to="/inicio/juegos">Juegos</Link></li>
             </ul>
           </li>
-          <li><a href="#">Mis listas</a></li>
+          <li><Link to="#">Mis listas</Link></li>
         </ul>
         {isLoggedIn ? (
           <div className="loged">
-            <a href='/perfil'><img src={defaultImg} alt="User avatar" /></a>
+            <Link to='/perfil'><img src={defaultImg} alt="User avatar" /></Link>
             <div className="logoutuno">
-              <a className="logoutdos" href='#' onClick={handleLogout}>Logout</a>
+              <Link className="logoutdos" to='#' onClick={handleLogout}>Logout</Link>
             </div>
           </div>
 
         ) : (
-          <a className="login" href="/login">Login</a>
+          <Link className="login" to="/login">Login</Link>
         )}
 
       </header>

@@ -1,0 +1,57 @@
+@font-face {
+    font-family: kum;
+    src: url('../fonts/KumbhSans-Regular.ttf');
+}
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.Contenedor-Filtro{
+    background-color: #021012;
+    padding: 1%;
+    display: flex;
+    flex-direction: column;
+}
+
+.Tipo-Filtro{
+ margin-bottom: 2%;
+}
+.Desplegable{
+    border-radius: 4px;
+
+}
+.Opciones-elegir, .Desplegable{
+    display: flex;
+    justify-content: center;
+    width: 120px;
+    font-family: kum;
+    padding: 5px;
+    cursor: pointer; 
+    background-color: #123F4F;
+
+ 
+}
+.Opciones-elegir:first-of-type{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.Opciones-elegir:last-of-type{
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.Opciones-elegir{
+    background-color: #0c2a35;
+}
+.Opciones-elegir:hover{
+    background-color: #1d647e;
+}
+
+
+

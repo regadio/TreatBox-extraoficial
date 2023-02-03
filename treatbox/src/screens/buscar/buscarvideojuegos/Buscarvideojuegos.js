@@ -1,11 +1,10 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-import Resultadovideojuegos from '../../../components/resultadovideojuegos/Resultadovideojuegos'
-import Header from '../../../components/header/Header'
+import Resultadovideojuegos from '../../../components/buscar/resultadovideojuegos/Resultadovideojuegos'
 import Footer from '../../../components/footer/Footer'
-import FiltroAno from '../../../components/filters/FiltroAno'
-import FiltroBasico from '../../../components/filters/FiltroBasico'
-import FiltroGenero from '../../../components/filters/FiltroGenero'
+import FiltroAno from '../../../components/filtros/FiltroAno'
+import FiltroBasico from '../../../components/filtros/FiltroBasico'
+import FiltroGenero from '../../../components/filtros/FiltroGenero'
 
 
 
@@ -13,12 +12,7 @@ function Buscarvideojuegos() {
 
     return (
         <div>
-            <Header />
-            <div className='filtros'>
-                <FiltroBasico></FiltroBasico><FiltroGenero></FiltroGenero><FiltroAno></FiltroAno>
-            </div>
             <Resultadovideojuegos />
-            <Footer />
         </div>
     )
 }

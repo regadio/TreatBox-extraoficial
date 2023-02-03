@@ -8,22 +8,16 @@ import Header from '../../components/header/Header';
 import Footer from '../../components/footer/Footer';
 // import Disclam from '../../components/disclaimChart/DisclaimChart';
 import Ranking from '../../components/ranking/Ranking';
-import FiltroBasico from '../../components/filters/FiltroBasico';
-import FiltroGenero from '../../components/filters/FiltroGenero';
-import FiltroAno from '../../components/filters/FiltroAno';
 import './inicio.css';
 
 function Inicio(props) {
 
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       {/* <div className='discContainer'>
         <Disclam/>
         </div> */}
-      <div className='filtros'>
-        <FiltroBasico></FiltroBasico><FiltroGenero></FiltroGenero><FiltroAno></FiltroAno>
-      </div>
       <div className='tipoContainer'>
         <NovedadesPeliculas />
       </div>
@@ -41,7 +35,6 @@ function Inicio(props) {
         <Ranking></Ranking>
         <Ranking></Ranking>
       </div> 
-      <Footer></Footer>
     </div>
   );
 }
