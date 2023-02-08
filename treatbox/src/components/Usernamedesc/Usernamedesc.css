@@ -4,7 +4,54 @@
     box-sizing: border-box;
 }
 
-
-.nombre-usuario {
+.contenedor-Usernamedesc{
+    padding: 10%;
+    margin-left: 5%;
+}
+.descripcion-usuario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
+    margin-bottom: 25px;
+    margin-top: 8px;
+    font-size: 14px;
+}
+.descripcion-usuario button{
+    font-size: 10px;
+    margin-top: 15px;
+    width: 99px;
+    background-color: #24629B;
+    border: 0;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.nombre-usuario {
+    color: #3CA58C;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 45px;
+    font-weight: bold;
+}
+.cambiar-des{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.cambiar-des input{
+    border: 0.5px solid rgb(77, 77, 77);
+    background-color:#021012 ;
+    width: 100%;
+}
+.cambiar-des button{
+    font-size: 10px;
+    margin-top: 10px;
+    width: 99px;
+    background-color: #24629B;
+    border: 0;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
 }

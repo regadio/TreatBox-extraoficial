@@ -11,16 +11,6 @@ function MilistaPeliculas() {
   const [idmovies, setidMovies] = useState([]);
   const [botonActivo, setBotonActivo] = useState(false);
 
-  useEffect(() => {
-    axios.get(`http://localhost:8000/peliculas/${username}/`)
-      .then(response => {
-        setidMovies(response.data.results);
-        console.log("mostrar id peliculas",response.data.results)
-      })
-      .catch(error => {
-        console.log(error);
-      });
-  }, []);
 
   useEffect(() => {
     axios.get(`https://api.themoviedb.org/3/movie/${idmovies}?api_key=1b4876eaca59dc1cf248c634897da2a7&language=es`)

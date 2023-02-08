@@ -4,10 +4,12 @@
     box-sizing: border-box;
 }
 .user-General{
-    border: 1px solid red;
     margin-top: 50px;
     display: flex;
 }
 .user-perfil{
-    border: 1px solid blue;
+    width: 20%;
+}
+.General-perfil{
+    width: 80%;
 }

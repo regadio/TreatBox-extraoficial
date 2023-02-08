@@ -27,7 +27,6 @@ function Detallepelicula() {
   return (
     <div className='total-detalle'>
 
-      {/* <img className='imagen-fondo' src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`} alt={movie.title} /> */}
       <div className='contenedor-poster-detalles'>
         <div className='poster'>
           <img src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} alt={movie.title} />

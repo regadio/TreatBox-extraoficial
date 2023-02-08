@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import './Usernamedesc.css';
 import axios from 'axios';
+
 function Usernamedesc() {
   const username = localStorage.getItem("username");
   const [user, setUser] = useState();
   const [error, setError] = useState([]);
-  const descriptionn = "aaaaaaaaaaathdghdgghaadcdfffffggggghhhhjjjjjjjjj";
-  const [descripcion,setDescription] = useState("Descripción de ejemplo");
+  const [descriptionn, setDescription] = useState("Escribe tu descripción");
+  const [showDescription, setShowDescription] = useState(false);
+  const [btnText, setBtnText] = useState("Editar descripción");
+
   useEffect(() => {
     getUser();
   }, []);
@@ -29,6 +32,9 @@ function Usernamedesc() {
       });
       setError('');
       getUser();
+      setShowDescription(!showDescription);
+      setBtnText(showDescription ? "Editar descripción" : "Cerrar");
+
     } catch (err) {
       if (err.response.status === 405) {
         setError('Ocurrió un error');
@@ -37,6 +43,15 @@ function Usernamedesc() {
       }
     }
   };
+
+  const handleDescription = () => {
+    setShowDescription(!showDescription);
+    setBtnText(showDescription ? "Editar descripción" : "Cerrar");
+  };
+  const handleInputChange = e => {
+    setDescription(e.target.value);
+    };
+
   return (
     <div className='contenedor-Usernamedesc'>
       {user && user.map((item) => (
@@ -46,8 +61,14 @@ function Usernamedesc() {
           </div>
           <div className='descripcion-usuario'>
             {item.descriptionn}
+            <button type="button" onClick={handleDescription}>{btnText}</button>
           </div>
-          <button type="button" onClick={handleClick}>Editar Descripcion</button>
+          {showDescription && (
+            <div className='cambiar-des'>
+              <input onChange={handleInputChange} value={descriptionn}></input>
+              <button type="button" onClick={handleClick}>Guardar</button>
+            </div>
+          )}
         </div>
       ))}
     </div>

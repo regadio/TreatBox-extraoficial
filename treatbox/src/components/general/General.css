@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.total-general{
+    display: flex;
+    flex-direction: column;
+}
+.estadisticas{
+}
+.estadisticas-resto{
+    display: flex;
+    flex-direction: column;
+}
+.estadisticas-peli{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.estadisticas-serie{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
