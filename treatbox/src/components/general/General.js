@@ -49,7 +49,7 @@ function General() {
           <div className='estadisticas-serie'>
             {totalSeries}
             <div>
-              Total Películas
+              Total Series
             </div>
           </div>
           <div className='estadisticas-peli'>

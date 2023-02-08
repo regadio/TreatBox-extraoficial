@@ -3,21 +3,21 @@ import axios from 'axios';
 import { useParams } from 'react-router-dom';
 import './añadir.css';
 
-function Añadir() {
+function Añadirserie() {
   const [movie, setMovie] = useState([]);
-  const [movie_state, setmovie_state] = useState([]);
+  const [serie_state, setserie_state] = useState([]);
   const [times_view, settimes_view] = useState(0);
   const [notes, setnotes] = useState(0);
   const [final_date, setfinal_date] = useState();
   const [comment, setcomment] = useState([]);
   const [error, setError] = useState([]);
   let { id } = useParams();
-  const id_movie = id;
+  const id_serie = id;
   const sessionToken = localStorage.getItem('session_token');
   const username = localStorage.getItem('username');
   console.log("username", username);
   useEffect(() => {
-    axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=1b4876eaca59dc1cf248c634897da2a7&language=es`)
+    axios.get(`https://api.themoviedb.org/3/tv/${id}?api_key=1b4876eaca59dc1cf248c634897da2a7&language=es`)
       .then(response => {
         setMovie(response.data);
       }, {
@@ -30,15 +30,15 @@ function Añadir() {
   const handleClick = async e => {
     e.preventDefault();
     console.log(
-      id_movie,
-      movie_state,
+        id_serie,
+      serie_state,
       notes,
       times_view,
       final_date,
       comment,)
     try {
-      const res = await axios.put(`http://localhost:8000/peliculas/favoritos/${id_movie}/`, {
-        movie_state,
+      const res = await axios.put(`http://localhost:8000/series/favoritos/${id_serie}/`, {
+        serie_state,
         notes,
         times_view,
         final_date,
@@ -66,7 +66,7 @@ function Añadir() {
         <div className='row1'>
           <div>
             <label for="estado">Estado:</label>
-            <select name="estado" onChange={e => setmovie_state(e.target.value)}>
+            <select name="estado" onChange={e => setserie_state(e.target.value)}>
               <option value="Pendiente">Pendiente</option>
               <option value="Visto">Visto</option>
             </select>
@@ -98,4 +98,4 @@ function Añadir() {
   )
 }
 
-export default Añadir;
+export default Añadirserie;

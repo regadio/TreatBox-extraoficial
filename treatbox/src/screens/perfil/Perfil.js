@@ -5,9 +5,6 @@ import Bannerperfil from '../../components/bannerperfil/Bannerperfil'
 import Usernamedesc from '../../components/Usernamedesc/Usernamedesc'
 import General from '../../components/general/General'
 import Headerperfil from '../../components/Headerperfil/Headerperfil'
-import MilistaJuegos from '../../components/mislistas/MilistaJuegos'
-import MilistaPeliculas from '../../components/mislistas/MilistaPeliculas'
-import MilistaSeries from '../../components/mislistas/MilistaSeries'
 import './Perfil.css';
 import { useLocation, useNavigate } from 'react-router-dom';
 function Perfil() {
@@ -34,13 +31,13 @@ function Perfil() {
           location.pathname.indexOf("listas") !== -1 ? (
             <div className='listas-perfil'>
               <div className='milista-peliculas'>
-                <MilistaPeliculas />
+                
               </div>
               <div className='milista-series'>
-                <MilistaSeries />
+               
               </div>
               <div className='milista-juegos'>
-                <MilistaJuegos />
+                
               </div>
             </div>
           ) : (

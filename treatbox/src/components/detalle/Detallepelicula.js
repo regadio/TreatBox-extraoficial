@@ -9,6 +9,7 @@ function Detallepelicula() {
   const [movie, setMovie] = useState({});
   const [mostrarAñadir, setMostrarAñadir] = useState(false);
   let { id } = useParams();
+  // axios.get(`https://api.themoviedb.org/3/tv/${id}?api_key=1b4876eaca59dc1cf248c634897da2a7&language=es`)
 
   useEffect(() => {
     axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=1b4876eaca59dc1cf248c634897da2a7&language=es`)
