@@ -34,3 +34,67 @@
     font-family: kum;
     text-align: center;
 }
+@media (max-width: 1700px) {
+  .contenidoC {
+    width: 18%;
+  }
+  .contenedor {
+    height: 330px;
+  }
+  .activo{
+    overflow: none;
+    height: 100%;
+  }
+}
+@media (max-width: 1500px) {
+  .contenidoC {
+    width: 20%;
+  }
+  .contenedor {
+    height: 320px;
+  }
+  .activo{
+    overflow: none;
+    height: 100%;
+  }
+}
+@media (max-width: 1350px) {
+  .contenidoC {
+    width: 24%;
+  }
+  .contenedor {
+    height: 370px;
+  }
+  .activo{
+    overflow: none;
+    height: 100%;
+  }
+}
+@media (max-width: 1300px) {
+  .contenidoC {
+    width: 28%;
+  }
+  .contenedor {
+    height: 370px;
+  }
+  .activo{
+    overflow: none;
+    height: 100%;
+  }
+}
+@media (max-width: 1200px) {
+  .contenidoC {
+    width: 33%;
+  }
+  .contenedor {
+    height: 390px;
+  }
+  .activo{
+    overflow: none;
+    height: 100%;
+  }
+  .tipo{
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+}

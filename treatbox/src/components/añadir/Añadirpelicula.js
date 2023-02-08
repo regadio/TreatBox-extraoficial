@@ -15,11 +15,12 @@ function Añadir() {
   const id_movie = id;
   const sessionToken = localStorage.getItem('session_token');
   const username = localStorage.getItem('username');
-  console.log("username",username);
+  console.log("username", username);
   useEffect(() => {
     axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=1b4876eaca59dc1cf248c634897da2a7&language=es`)
       .then(response => {
         setMovie(response.data);
+      }, {
       })
       .catch(error => {
         console.log(error);
