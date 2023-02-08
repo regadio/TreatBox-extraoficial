@@ -5,17 +5,19 @@ import Bannerperfil from '../../components/bannerperfil/Bannerperfil'
 import Usernamedesc from '../../components/Usernamedesc/Usernamedesc'
 import General from '../../components/general/General'
 import Headerperfil from '../../components/Headerperfil/Headerperfil'
-import Listaperfil from '../../components/listasperfil/listaperfil'
 import MilistaJuegos from '../../components/mislistas/MilistaJuegos'
 import MilistaPeliculas from '../../components/mislistas/MilistaPeliculas'
 import MilistaSeries from '../../components/mislistas/MilistaSeries'
 import './Perfil.css';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate   } from 'react-router-dom';
 function Perfil() {
   const location = useLocation();
+  const navigate  = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const username = localStorage.getItem("username");
   // Se debe validar el token de sesión aquí
+  useEffect(() => {
+    checkSessionToken();
+  }, []);
   const checkSessionToken = () => {
     const sessionToken = localStorage.getItem("session_token");
     if (sessionToken) {
@@ -23,9 +25,12 @@ function Perfil() {
     }
   };
   useEffect(() => {
-    checkSessionToken();
-  }, []);
-
+    if (!isLoggedIn) {
+      navigate('/login');
+    }
+  }, [isLoggedIn, navigate ]);
+  
+console.log("token es tipo",isLoggedIn)
   return (
     <div>
 

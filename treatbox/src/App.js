@@ -16,17 +16,7 @@ import Contenedorfiltros from './components/filtros/Contenedorfiltros';
 import Perfil from './screens/perfil/Perfil';
 function App({}) {
   const [genero, setGenero] = useState({})
-  const [year, setYear] = useState({})
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const checkSessionToken = () => {
-    const sessionToken = localStorage.getItem("session_token");
-    if (sessionToken) {
-      setIsLoggedIn(true);
-    }
-  };
-  useEffect(() => {
-    checkSessionToken();
-  }, []);
+  const [year, setYear] = useState({}) 
 
   const handleGenre = (idgenero) => {
     setGenero(idgenero);
