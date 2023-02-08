@@ -1,17 +1,14 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom'
 import Resultadopeliculas from '../../../components/buscar/resultadopeliculas/Resultadopeliculas'
-import Footer from '../../../components/footer/Footer'
-import FiltroAno from '../../../components/filtros/FiltroAno'
-import FiltroBasico from '../../../components/filtros/FiltroBasico'
-import FiltroGenero from '../../../components/filtros/FiltroGenero'
+import '../buscar.css';
 
-
-function Buscarpeliculas() {
+function Buscarpeliculas({genero,year}){
+        console.log("Genero En buscarpeliculas es",genero )
 
     return (
-        <div>
-            <Resultadopeliculas />
+        <div className='tipoContainer'>
+            <Resultadopeliculas genero={genero} year={year}/>
         </div>
     )
 }

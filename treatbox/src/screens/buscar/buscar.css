@@ -1,0 +1,56 @@
+
+@font-face {
+    font-family: Kum;
+    src: url('./../../components/fonts/KumbhSans-Regular.ttf');
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+    
+}
+
+body{
+    background-color: #021012;
+}
+.discContainer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 5%;
+    background-color: #021012;
+}
+
+.tipoContainer{
+margin: 0 20% ;
+    
+}
+
+.rankin{
+    display: grid;
+    justify-content: center;
+    margin-bottom: 5%;
+    margin-top: 15%;
+    
+    
+}
+.rankinTitle{
+    font-family: kum;
+   
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+}
+
+.filtros{
+   
+    width: 90%;
+    display: flex;
+    margin-left: 5% ;
+    margin-bottom: 5%;
+}
+
+.discContainer{
+    width: 100%;
+}

@@ -11,46 +11,26 @@
 
 .contenedorC{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    font-family: Kum;
-    font-size: 13px;
-    color: white;
-    background-color: #07181E;
-
-    /*border: 1px solid blue;*/
-
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .contenidoC{
-    
-    margin-bottom: 5%;
-    width: 130px;
-    margin-left: 3%;
-    margin-right: 3%;
+    border-radius: 8px;
+    margin: 0 3% 6%;
+    padding-bottom: 5px;
+    width: 15%;
     background-color: #0B252E;
-    border-radius: 5px;
-    overflow: hidden;
-    height: 250px;
 
     /*border: 1px solid red;*/
 }
 .contenidoC img{
-    width: 130px;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
+    border-radius: 5px 5px 0 0;
+    object-fit: contain;
 }
 
 .tituloC{
     font-family: kum;
-    width: 110px;
-    margin-left: 10px;
-    margin-top: 5px;
     text-align: center;
-
-}
-
-.linko{
-    text-decoration: none;
-    color: white;
 }

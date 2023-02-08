@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import './Detalle.css'
 import Añadir from '../añadir/Añadirpelicula';
 
-function Detallepelicula() {
+function Detalleseries() {
   const [movie, setMovie] = useState({});
   const [mostrarAñadir, setMostrarAñadir] = useState(false);
   let { id } = useParams();
@@ -64,4 +64,4 @@ function Detallepelicula() {
   );
 }
 
-export default Detallepelicula;
+export default Detalleseries;

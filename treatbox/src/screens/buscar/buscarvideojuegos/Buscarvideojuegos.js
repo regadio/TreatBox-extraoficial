@@ -5,13 +5,13 @@ import Footer from '../../../components/footer/Footer'
 import FiltroAno from '../../../components/filtros/FiltroAno'
 import FiltroBasico from '../../../components/filtros/FiltroBasico'
 import FiltroGenero from '../../../components/filtros/FiltroGenero'
-
+import '../buscar.css';
 
 
 function Buscarvideojuegos() {
 
     return (
-        <div>
+        <div className='tipoContainer'>
             <Resultadovideojuegos />
         </div>
     )

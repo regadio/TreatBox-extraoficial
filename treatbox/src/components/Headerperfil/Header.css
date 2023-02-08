@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.total-nav-perfil{
+    border: 2px solid rebeccapurple;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.nav-perfil{
+    position: absolute;
+    display: flex;
+    left: 48%;
+}
+.nav-perfil li{
+    margin-left: 50px;
+}

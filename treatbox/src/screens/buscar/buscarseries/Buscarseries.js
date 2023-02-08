@@ -5,12 +5,13 @@ import Footer from '../../../components/footer/Footer'
 import FiltroAno from '../../../components/filtros/FiltroAno'
 import FiltroBasico from '../../../components/filtros/FiltroBasico'
 import FiltroGenero from '../../../components/filtros/FiltroGenero'
+import '../buscar.css';
 
 
 function Buscarseries() {
 
     return (
-        <div>
+        <div className='tipoContainer'>
             <Resultadoseries />
         </div>
     )

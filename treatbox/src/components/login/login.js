@@ -1,13 +1,14 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Navigate } from 'react-router-dom'
+import { useNavigate  } from 'react-router-dom';
 
 function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const history = useNavigate ();
+
   const handleSubmit = async e => {
     e.preventDefault();
     if (!username || !password) {
@@ -20,8 +21,10 @@ function Login() {
         password,
       });
       setError('');
-      setIsLoggedIn(true);
       localStorage.setItem("session_token", res.data.session_token);
+      localStorage.setItem("username", username);
+      history("/inicio");
+      window.location.reload();
     } catch (err) {
       if (err.response.status === 400) {
         setError('La contraseña o el usuario no existen');
@@ -29,12 +32,9 @@ function Login() {
         setError('Ocurrió un error al registrar al usuario');
       }
     }
-  };
+  }; return (
 
-  return (
-      
     <form id="login" className="login-register" onSubmit={handleSubmit}>
-      {isLoggedIn && <Navigate to="/inicio" />}
       <input value={username} onChange={e => setUsername(e.target.value)} name="nombre" type="text" className="input-texto" placeholder="Nombre Usuario" required />
       <input value={password} onChange={e => setPassword(e.target.value)} name="nombre" type="password" className="input-texto" placeholder="Introduce Contraseña" required />
       <input name="nombre" type="checkbox" className="check-box" /><span>Recordar Contraseña</span>

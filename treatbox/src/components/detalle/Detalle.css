@@ -11,6 +11,9 @@
     color: white;
 
 }
+.total-detalle{
+
+}
 .contenedor-poster-detalles {
     padding: 4%;
     display: flex;
@@ -73,5 +76,6 @@
 .duracion{
 
 }
+
 
 /* FIN fecha GENEROS */

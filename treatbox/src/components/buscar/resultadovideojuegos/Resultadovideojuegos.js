@@ -3,10 +3,11 @@ import axios from "axios";
 import '../Buscar.css';
 import {Link} from "react-router-dom";
 
-const API_URL = "https://api.themoviedb.org/3/discover/tv?api_key=1b4876eaca59dc1cf248c634897da2a7&language=es";
 
 function Resultadovideojuegos() {
   const [games, setGames] = useState([]);
+  const [pagina, setpagina] = useState(1);
+  const API_URL = "https://api.themoviedb.org/3/discover/tv?api_key=1b4876eaca59dc1cf248c634897da2a7&language=es";
 
   useEffect(() => {
     axios.get(API_URL)
@@ -16,8 +17,14 @@ function Resultadovideojuegos() {
       .catch(error => {
         console.log(error);
       });
-  }, []);
-
+    }, [pagina]);
+    const nextPage = () => {
+      setpagina(pagina + 1);
+    };
+  
+    const prevPage = () => {
+      setpagina(pagina - 1);
+    };
   return (
     <div>
       <div className='contenedorC'>
@@ -32,6 +39,14 @@ function Resultadovideojuegos() {
           </div>
         ))}
       </div>
+      <div className='paginador'>
+        <button disabled={pagina <= 1} onClick={prevPage}>
+          Anterior
+        </button>
+        <span>Página {pagina}</span>
+        <button onClick={nextPage}>Siguiente</button>
+      </div>
+
     </div>
   );
 }
