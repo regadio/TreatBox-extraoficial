@@ -9,6 +9,7 @@ function Usernamedesc() {
   const [descriptionn, setDescription] = useState("Escribe tu descripción");
   const [showDescription, setShowDescription] = useState(false);
   const [btnText, setBtnText] = useState("Editar descripción");
+  const sessionToken = localStorage.getItem("session_token");
 
   useEffect(() => {
     getUser();
@@ -16,7 +17,11 @@ function Usernamedesc() {
 
   const getUser = async () => {
     try {
-      const res = await axios.get(`http://localhost:8000/user/${username}/`);
+      const res = await axios.get(`http://localhost:8000/user/${username}/`, {
+        headers: {
+          'Authorization': `${sessionToken}`
+        }
+      });
       setUser(res.data);
     } catch (err) {
       console.log(err);
@@ -29,6 +34,11 @@ function Usernamedesc() {
       const res = await axios.put(`http://localhost:8000/user/edit/${username}/`, {
         username,
         descriptionn,
+      }, {
+        headers: {
+
+          'Authorization': `${sessionToken}`
+        }
       });
       setError('');
       getUser();
@@ -50,7 +60,7 @@ function Usernamedesc() {
   };
   const handleInputChange = e => {
     setDescription(e.target.value);
-    };
+  };
 
   return (
     <div className='contenedor-Usernamedesc'>

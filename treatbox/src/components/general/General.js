@@ -23,6 +23,7 @@ function General() {
       setTotalSeries(res.data.total_series);
       setavgPelis(res.data.avg_pelis);
       setavgPelis(res.data.setavgSeries);
+      
     } catch (err) {
       console.log(err);
     }

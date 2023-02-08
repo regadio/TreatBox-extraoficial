@@ -15,7 +15,6 @@ function Añadirserie() {
   const id_serie = id;
   const sessionToken = localStorage.getItem('session_token');
   const username = localStorage.getItem('username');
-  console.log("username", username);
   useEffect(() => {
     axios.get(`https://api.themoviedb.org/3/tv/${id}?api_key=1b4876eaca59dc1cf248c634897da2a7&language=es`)
       .then(response => {
@@ -29,13 +28,6 @@ function Añadirserie() {
 
   const handleClick = async e => {
     e.preventDefault();
-    console.log(
-        id_serie,
-      serie_state,
-      notes,
-      times_view,
-      final_date,
-      comment,)
     try {
       const res = await axios.put(`http://localhost:8000/series/favoritos/${id_serie}/`, {
         serie_state,
@@ -44,8 +36,12 @@ function Añadirserie() {
         final_date,
         comment,
         username,
-      },
-      ); setError('');
+      }, {
+        headers: {
+          
+          'Authorization': `${sessionToken}`
+        }
+      }); setError('');
     } catch (err) {
       if (err.response.status === 405) {
         setError('Ocurrió un error');
