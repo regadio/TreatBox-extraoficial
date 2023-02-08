@@ -8,11 +8,11 @@ import FiltroGenero from '../../../components/filtros/FiltroGenero'
 import '../buscar.css';
 
 
-function Buscarseries() {
+function Buscarseries({genero,year}) {
 
     return (
         <div className='tipoContainer'>
-            <Resultadoseries />
+            <Resultadoseries genero={genero} year={year}/>
         </div>
     )
 }

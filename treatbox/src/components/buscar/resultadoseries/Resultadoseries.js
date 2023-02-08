@@ -4,10 +4,10 @@ import '../Buscar.css';
 import {Link} from "react-router-dom";
 
 
-function Resultadoseries() {
+function Resultadoseries({genero,year}) {
   const [series, setSeries] = useState([]);
   const [pagina, setpagina] = useState(1);
-  const API_URL = `https://api.themoviedb.org/3/discover/tv?api_key=1b4876eaca59dc1cf248c634897da2a7&language=es&page=${pagina}`;
+  const API_URL = `https://api.themoviedb.org/3/discover/tv?api_key=1b4876eaca59dc1cf248c634897da2a7&language=es&page=${pagina}e&with_genres=${genero}&first_air_date_year=${year}`;
 
   useEffect(() => {
     axios.get(API_URL)
@@ -17,7 +17,7 @@ function Resultadoseries() {
       .catch(error => {
         console.log(error);
       });
-    }, [pagina]);
+    }, [pagina,genero,year]);
     const nextPage = () => {
       setpagina(pagina + 1);
     };

@@ -3,17 +3,11 @@
     padding: 0;
     box-sizing: border-box;
 }
-.user-general{
-    margin-top: 80px;
-    border: 2px solid rgb(25, 0, 255);
+.user-General{
+    border: 1px solid red;
+    margin-top: 50px;
     display: flex;
-    justify-content: space-between;
 }
 .user-perfil{
-    width: 30%;
-    border: 2px solid burlywood;
-}
-.general-perfil{
-    border: 2px solid rgb(81, 255, 0);
-    width: 70%;
+    border: 1px solid blue;
 }

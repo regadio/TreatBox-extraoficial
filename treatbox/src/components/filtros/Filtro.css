@@ -52,10 +52,13 @@
 .Opciones-elegir:hover{
     background-color: #1d647e;
 }
-.contenedor-year{
+.contenedor-tamaño{
     height: 120px;
     overflow: auto;
+
 }
 
+.contenedor-tamño-basico{
 
+}
 

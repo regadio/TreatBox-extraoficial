@@ -11,30 +11,142 @@
     src: url(../fonts/KumbhSans-Regular.ttf);
   }
 
-.chart{
+  .dchart{
+    width: 750px;
+    height: 420px;
+    background-color: #07181E;
+    border-radius: 8px ;
+ 
+  }
+
+  .equisContainer{
+    display: flex;
+    justify-content: flex-end;
+   
+  }
+
+.equis{
+    width: 20px;
+    height: 18px;
+    margin-top: 15px;
+    margin-right: 15px;
+    cursor: pointer;
+    opacity: 50%;
+}
+
+
+  .dtres img,.dcuatro img{
+    width: 40px;
+    height: 40px;
+}
+
+.dtres, .dcuatro{
+    width: 46%;
+    height: 80px;
+    background-color: #202f34;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 12px;
+}
+
+
+.dtres > div:last-of-type, .dcuatro > div:first-of-type{
+    width: 90%;
+}
+
+.dtres > div, .dcuatro > div{
+    padding: 6%;
+}
+
+.intro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    font-family: Kum;
+    padding-top: 6%;
+    font-size: 0.7em;
+ 
+}
+
+.intro h1, .intro h2{
+    font-family: Kum;
+    font-weight: 100;
+}
+
+.intro h2{
+    color: #4ab6ad;
+}
+
+.ddos{
+    padding-top: 3%;
+}
+
+p{
+    font-family: Khula;
+}
+
+
+.dbutton{
+    background-color: #24629B;
+    border: none;
+    padding: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-radius: 5px;
+    font-family: Bakbak;
+    cursor: pointer;
+    margin-left: 300px;
+
+}
+
+.dcontainer{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    height: 200px;
+    align-items: center;
+ 
+}
+
+
+
+
+  /* .dchart{
     width: 750px;
     height: 450px;
     background-color: #07181E;
     border-radius: 8px ;
+    border: 2px solid red;
+  }
 
+.intro{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
+
 p{
     font-family: Khula;
-
 }
-.uno{
+
+.duno{
     padding-top: 50px;
     text-align: center;
     font-size: 20px;
     font-family: Kum;
     font-weight: 550;
 }
-.dos{
+
+.ddos{
     margin-top: 30px;
     margin-left: 50px;
     color: #99bbc5;
 }
-.tres, .cuatro{
+
+.dtres, .dcuatro{
     width: 300px;
     height: 80px;
     background-color: #202f34;
@@ -45,14 +157,13 @@ p{
     padding: 17px;
     font-size: 12px;
 }
-
-.container{
+.dcontainer{
     display: flex;
+    align-items: flex-end;
     justify-content: space-evenly;
     margin-top: 50px;
 }
-
-button{
+.dbutton{
     background-color: #24629B;
     border: none;
     padding: 10px;
@@ -63,13 +174,13 @@ button{
     cursor: pointer;
     margin-left: 300px;
     margin-top: 90px;
-    
-
 }
-.tres img,.cuatro img{
+
+.dtres img,.dcuatro img{
     width: 40px;
     height: 40px;
 }
-.tres img{
+.dtres img{
     margin-right: 20px;
-}
+
+} */

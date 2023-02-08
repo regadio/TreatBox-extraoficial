@@ -22,7 +22,7 @@ function FiltroAno({pasaryear}) {
         {selectedOption}
       </div >
       {isOpen && (
-        <div className='contenedor-year'>
+        <div className='contenedor-tamaño'>
           {options.map((year) => (
             <div className={`Opciones-elegir ${selectedOption === year ? "selected" : ""}`} key={year} onClick={() => handleClick(year)}>
               {year}

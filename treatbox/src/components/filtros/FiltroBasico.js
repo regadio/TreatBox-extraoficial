@@ -50,7 +50,7 @@ function FiltroBasico() {
         {selectedOption}
       </div >
       {isOpen && (
-        <div >
+        <div className='contenedor-tamño-basico' >
           {options.map((option) => (
             <div className={`Opciones-elegir ${selectedOption === option ? "selected" : ""}`} key={option} onClick={() => handleClick(option)}>
               {option}

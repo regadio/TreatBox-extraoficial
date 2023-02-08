@@ -49,7 +49,7 @@ function App({}) {
         <Route path="/detalle/peliculas/:id" element={<Detallepelicula />} />
         <Route path="/detalle/series/:id" element={<Detalleseries />} />
         <Route path='/inicio/peliculas' element={<Buscarpeliculas genero={genero} year={year} />} />
-        <Route path='/inicio/series' element={<Buscarseries />} />
+        <Route path='/inicio/series' element={<Buscarseries genero={genero} year={year}/>} />
         <Route path='/inicio/juegos' element={<Buscarvideojuegos />} />
         <Route path='/perfil/:nick' element={<Perfil />} />
         <Route path='/perfil/:nick/listas' element={<Perfil />} />

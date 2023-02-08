@@ -6,7 +6,7 @@ import NovedadesSeries from '../../components/Novedades/NovedadesSeries';
 import NovedadesJuegos from '../../components/Novedades/NovedadesJuegos';
 import Header from '../../components/header/Header';
 import Footer from '../../components/footer/Footer';
-// import Disclam from '../../components/disclaimChart/DisclaimChart';
+import Disclaim from '../../components/disclaimChart/DisclaimChart';
 import Ranking from '../../components/ranking/Ranking';
 import './inicio.css';
 
@@ -14,10 +14,9 @@ function Inicio(props) {
 
   return (
     <div>
-      {/* <Header /> */}
-      {/* <div className='discContainer'>
-        <Disclam/>
-        </div> */}
+      <div className='discContainer'>
+        <Disclaim />
+      </div>
       <div className='tipoContainer'>
         <NovedadesPeliculas />
       </div>

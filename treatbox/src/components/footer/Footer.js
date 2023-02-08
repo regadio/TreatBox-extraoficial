@@ -1,7 +1,7 @@
 import React from 'react';
 import logo2 from '../Icons/LOGOTREATBOXdef.png';
 import './footer.css';
-import {useLocation} from 'react-router-dom';
+import {useLocation, Link} from 'react-router-dom';
 function Footer() {
     const location = useLocation();
     return (
@@ -12,7 +12,7 @@ function Footer() {
                         <img src={logo2} alt="Logo2" width="200px" />
                     </div>
                     <div class="col1">
-                        <a href="">Contacto</a>
+                        <Link to="/contacto">Contacto</Link>
                         <a href="">Términos y privacidad</a>
                         <a href="">SiteMap</a>
                     </div>

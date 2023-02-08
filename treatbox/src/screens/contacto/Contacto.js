@@ -13,7 +13,6 @@ function Contacto() {
 
     return (
         <div>
-            <Header />
             <div className='contacto'>
             <h2>Información de contacto</h2>
                 <div>

@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 .total-nav-perfil{
-    border: 2px solid rebeccapurple;
     height: 50px;
     display: flex;
     align-items: center;

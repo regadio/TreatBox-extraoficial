@@ -10,7 +10,7 @@ function Detalleseries() {
   let { id } = useParams();
   
   useEffect(() => {
-    axios.get(`https://api.themoviedb.org/3/movie/${id}?api_key=1b4876eaca59dc1cf248c634897da2a7&language=es`)
+    axios.get(`https://api.themoviedb.org/3/tv/${id}?api_key=1b4876eaca59dc1cf248c634897da2a7&language=es`)
       .then(response => {
         setMovie(response.data);
       })

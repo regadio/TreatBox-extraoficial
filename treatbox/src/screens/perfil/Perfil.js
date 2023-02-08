@@ -28,7 +28,7 @@ function Perfil() {
 
   return (
     <div>
-      
+
       <div>
         <Bannerperfil />
       </div>
@@ -39,13 +39,13 @@ function Perfil() {
         location.pathname.indexOf("listas") !== -1 ? (
           <div className='listas-perfil'>
             <div className='milista-peliculas'>
-            <MilistaPeliculas/>
+              <MilistaPeliculas />
             </div>
             <div className='milista-series'>
-              <MilistaSeries/>
+              <MilistaSeries />
             </div>
             <div className='milista-juegos'>
-              <MilistaJuegos/>
+              <MilistaJuegos />
             </div>
           </div>
         ) : (

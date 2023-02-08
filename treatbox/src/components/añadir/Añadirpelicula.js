@@ -34,8 +34,7 @@ function Añadir() {
       final_date,
       comment,)
     try {
-      const res = await axios.put('http://localhost:8000/peliculas/favoritos/', {
-        id_movie,
+      const res = await axios.put(`http://localhost:8000/peliculas/favoritos/${id_movie}/`, {
         movie_state,
         notes,
         times_view,

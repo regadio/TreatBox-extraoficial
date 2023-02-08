@@ -41,7 +41,7 @@ function FiltroGenero({pasargenero }) {
         {selectedOption}
       </div>
       {isOpen && (
-        <div>
+        <div className='contenedor-tamaño'>
           {tipo === "Películas"
             ? options1.map((option) => (
               <div className={`Opciones-elegir ${selectedOption === option.name ? "selected" : ""}`} key={option.id} onClick={() => handleClick(option.name, option.id)}>

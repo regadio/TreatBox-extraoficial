@@ -1,0 +1,19 @@
+*{
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+}
+
+.contentNF{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    background-image: url('./../../components/Icons/LOGOTREATBOXcabesita.png');
+    background-size: 7% ;
+}
+
+h1{
+    font-family: kum;
+    font-size: 24px;
+}

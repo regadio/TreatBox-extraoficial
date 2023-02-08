@@ -9,7 +9,7 @@ function Resultadopeliculas({genero,year}) {
   console.log("El genro en ResultadoPeliculas ",genero);
   console.log("El año en ResultadoPeliculas ",year);
 
-  const API_URL = `https://api.themoviedb.org/3/discover/movie?api_key=1b4876eaca59dc1cf248c634897da2a7&language=es&sort_by=popularity.desc&include_adult=false&include_video=false&page=${pagina}&with_watch_monetization_types=flatrate&with_genres=${genero}&year=${year}`;
+  const API_URL = `https://api.themoviedb.org/3/discover/movie?api_key=1b4876eaca59dc1cf248c634897da2a7&language=es&sort_by=popularity.desc&include_adult=false&include_video=false&page=${pagina}&with_watch_monetization_types=flatrate&with_genres=${genero}&primary_release_year=${year}`;
   useEffect(() => {
     axios.get(API_URL)
       .then(response => {
